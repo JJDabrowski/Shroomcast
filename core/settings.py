@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-(ic==0&v1g5#9lggdaeevm=jova$n0%czpu7oby1-fe^d1kgfk
 DEBUG = True
 
 ALLOWED_HOSTS = ['shroomcast.azurewebsites.net']
-CSRF_TRUSTED_ORIGINS = ['https://shroomcast.azurewebsites.net']
+CSRF_TRUSTED_ORIGINS = ['https://*.azurewebsites.net']
 
 
 # Application definition
@@ -118,3 +118,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Azure settings
 SCM_DO_BUILD_DURING_DEPLOYMENT = 1
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
