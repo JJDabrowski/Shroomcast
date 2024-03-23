@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-(ic==0&v1g5#9lggdaeevm=jova$n0%czpu7oby1-fe^d1kgfk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['shroomcast.azurewebsites.net']
+ALLOWED_HOSTS = ['127.0.0.1', 'shroomcast.azurewebsites.net']
 CSRF_TRUSTED_ORIGINS = ['https://*.azurewebsites.net']
 
 
