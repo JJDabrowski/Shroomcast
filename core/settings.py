@@ -14,6 +14,7 @@ SECRET_KEY = 'django-insecure-(ic==0&v1g5#9lggdaeevm=jova$n0%czpu7oby1-fe^d1kgfk
 DEBUG = True
 
 ALLOWED_HOSTS = ['shroomcast.azurewebsites.net']
+CSRF_TRUSTED_ORIGINS = ['https://shroomcast.azurewebsites.net']
 
 
 # Application definition

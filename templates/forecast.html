@@ -3,7 +3,7 @@
 {% block func_content %}
 {% if message %}
 <div class="alert alert-danger">{{message}}</div>
-{% endif %} 
+{% endif %}
 <form method="post" class="sc-form">
     {% csrf_token %}
     {{ form.as_p }}
@@ -37,7 +37,7 @@
         <td>{{cloudCover}}</td>
     </tr>
 </table>
-{% endif %} 
+{% endif %}
 
 <script>
     const selectField = document.getElementById("id_date");
