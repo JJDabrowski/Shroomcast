@@ -25,14 +25,14 @@ class AuthView(CreateView):
 
     def get_success_url(self):
         return reverse('forecast')
-    
+
     def get_context_data(self, **kwargs):
         context = super(AuthView, self).get_context_data(**kwargs)
         message = self.request.GET.get("message")
         if message:
             context["message"] = "The provided Visual Crossing Key was invalid. Please provide a valid Visual Crossing Key"
         return context
-            
+
     def form_valid(self, form):
         if VisualCrossingAuth.objects.count()>0:
             for key in VisualCrossingAuth.objects.all():
@@ -42,7 +42,7 @@ class AuthView(CreateView):
             last_query = Query.objects.latest("id")
             last_query.delete()
             create_new_query(0)
-        
+
         return super().form_valid(form)
 
 
@@ -52,7 +52,7 @@ class ForecastView(FormView):
 
     def get_success_url(self):
         return self.request.path
-    
+
     def get(self, *args, **kwargs):
         context = self.get_context_data(**kwargs)
         municipality = kwargs.get('municipality', "")
@@ -84,30 +84,13 @@ class ForecastView(FormView):
 
                 except Exception as e:
                     print("the error is now", e)
-            
+
         return self.render_to_response(context)
-    
+
     def form_valid(self, form):
         municipality = form.cleaned_data["muncipality"]
         date = form.cleaned_data["date"]
         return self.get(self.request, municipality=municipality, date=date)
-
-
-class QueryView(TemplateView):
-    template_name = "query.html"
-
-    def get_context_data(self, **kwargs):
-        context = super(QueryView, self).get_context_data(**kwargs)
-        if Query.objects.count()>0:
-            last_query = Query.objects.latest("id")
-            if last_query.day != TODAY:
-                last_query.delete()
-                create_new_query(0)
-                last_query = Query.objects.latest("id")
-            context["queryCount"] = last_query.query_count
-        
-        return context
-
 
 class AboutView(TemplateView):
     template_name = "about.html"

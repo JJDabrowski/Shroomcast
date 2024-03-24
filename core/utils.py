@@ -63,7 +63,6 @@ def update_query_quota(value):
             current_object.save()
     else:
         create_new_query(value)
-        
 
 def create_new_query(value):
     new_query_count = Query(query_count = value)

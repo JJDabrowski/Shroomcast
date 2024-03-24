@@ -26,13 +26,6 @@ If something wouldn't work for you here, please do reach out to jakub.dabrowski7
 # How to use Shroomcast? #
 You can find descriptions of each Shroomcast subsites in the About section.
 
-# Query section limitations #
-The query section is highly imperfect since it uses only the query points you spend while using the Shroomcast app.
-Unfortunately, Visual Crossing API does not return the information about all the query points you have in your pricing model and how many
-you have left.
-The solution I suggest sums up the points you use and compares them to the limit that free users get (1000 query points a day).
-When the Visual Crossing key is changed, the query counter is reset.
-
 # RWD #
 The Shroomcast's display accommodates to 10 most popular screen resolutions by:
 https://www.hobo-web.co.uk/best-screen-size/
