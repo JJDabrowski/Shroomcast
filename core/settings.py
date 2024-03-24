@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-(ic==0&v1g5#9lggdaeevm=jova$n0%czpu7oby1-fe^d1kgfk'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'shroomcast.azurewebsites.net']
 CSRF_TRUSTED_ORIGINS = ['https://*.azurewebsites.net']
@@ -107,12 +107,10 @@ USE_TZ = True
 
 STATIC_URL = "static/"
 
-if DEBUG:
-        STATICFILES_DIRS = [
-            BASE_DIR / "static"
-       ]
-else:
-    STATIC_ROOT = BASE_DIR / "static"
+STATICFILES_DIRS = [
+    BASE_DIR / "static"
+]
+STATIC_ROOT = BASE_DIR / "assets"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
